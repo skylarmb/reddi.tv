@@ -10,12 +10,10 @@ class IndexComponent extends Component {
 
     return (
       <section>
-        <h2>react-webpack-boilerplate</h2>
-        <ul ref="indexList" className="index-list">
-          {this.props.items.map((item, index) => {
-            return (<li key={index}>item {item}</li>);
-          })}
-        </ul>
+        <h1>reddi.tv</h1>
+        <p>
+          Bacon ipsum dolor amet meatloaf cow short loin, jerky beef ribs ball tip pancetta. Drumstick jowl doner kevin spare ribs sausage frankfurter fatback bacon tongue shank flank ribeye capicola porchetta. Tenderloin spare ribs shoulder ham hock, biltong capicola pork belly pig sirloin alcatra kielbasa bacon. Filet mignon landjaeger ham hock spare ribs pork pancetta, sausage tongue strip steak tenderloin kevin venison. Strip steak shankle pork loin chuck, chicken kevin sirloin doner brisket andouille porchetta. Swine leberkas corned beef fatback, capicola pork shankle. Flank hamburger picanha, jerky capicola frankfurter spare ribs ham hock.
+        </p>
       </section>
     );
   }

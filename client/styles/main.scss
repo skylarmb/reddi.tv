@@ -1,6 +1,17 @@
-$background: lightblue;
+$background: #55aace;
 
 body {
   background: $background;
+  color: white;
   font-family: "Helvetica Neue", serif;
+}
+
+h1 {
+	font-size: 5em;
+	text-align: center;
+}
+p {
+	max-width: 80%;
+	text-align: center;
+	margin: 0 auto;
 }
