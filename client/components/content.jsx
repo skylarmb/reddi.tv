@@ -1,6 +1,7 @@
 import React from 'react';
 import Search from './search';
 import $ from 'jquery';
+import Videos from 'lib/Videos.js';
 var classNames = require('classnames');
 
 var Content = React.createClass({
@@ -33,17 +34,6 @@ var Content = React.createClass({
     this.setState({ index: index });
   },
 
-  getIframe: function (index) {
-    console.log(this.state);
-    var iframe = this.state.videos[index].data.media_embed.content;
-    if (!iframe) return null;
-
-    iframe = iframe.replace(/&lt;/g, '<').replace(/&gt;/g, '>')
-      .replace('600', '1280').replace('338', '720');
-
-    return {__html: iframe};
-  },
-
   render: function() {
     return (
       <div className='content'>
@@ -67,9 +57,16 @@ var Content = React.createClass({
     return (
       <div className='video-and-buttons'>
         {this.leftButton()}
-        <div className='video-container' dangerouslySetInnerHTML={this.getIframe(this.state.index)} />
+        <div className='video-container'>{this.videoIframe()}</div>
         {this.rightButton()}
       </div>
+    );
+  },
+
+  videoIframe: function () {
+    var url = Videos.getUrl(this.state.index);
+    return (
+      <iframe width="1280" height="720" src={url} frameBorder="0" allowFullScreen></iframe>
     );
   },
 
