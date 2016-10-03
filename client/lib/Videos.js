@@ -19,6 +19,10 @@ var Videos = {
     if (!iframe) return null;
     var src = iframe.match(/src="(\S+)"/)[1].concat('&autoplay=1');
     return src;
+  },
+
+  getTitle: function (index) {
+    return this.current ? this.current.data.children[index].data.title : 'No title'
   }
 };
 

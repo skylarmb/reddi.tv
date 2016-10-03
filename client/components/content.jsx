@@ -53,14 +53,21 @@ var Content = React.createClass({
         </p>
       );
     }
-
     return (
       <div className='video-and-buttons'>
+        {this.title()}
         {this.leftButton()}
         <div className='video-container'>{this.videoIframe()}</div>
         {this.rightButton()}
       </div>
     );
+  },
+
+  title: function () {
+    var title = Videos.getTitle(this.state.index);
+    return (
+      <h4>{title}</h4>
+    )
   },
 
   videoIframe: function () {
