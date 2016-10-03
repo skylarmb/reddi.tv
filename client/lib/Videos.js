@@ -4,7 +4,7 @@ var Videos = {
   current: null,
 
   get: function (subreddit) {
-    var base = 'http://www.reddit.com/r/';
+    var base = 'https://www.reddit.com/r/';
     var url  = base + subreddit + '.json?jsonp=?';
     $.getJSON(url).done(function (json) {
       this.current = json;
