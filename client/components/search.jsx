@@ -16,7 +16,6 @@ var Search = React.createClass({
 
   handleChange: function(event) {
     var name = $(event.target).val();
-
     /* Wait until user stops typing to execute get */
     if (this._timeout) clearTimeout(this._timeout);
     this._timeout = setTimeout(function () {
@@ -25,12 +24,12 @@ var Search = React.createClass({
   },
 
   render: function() {
-  	var searchClasses = classNames('search-wrap', {focused: this.state.focused});
-  	var hintClasses = classNames('transition', {invisible: this.state.focused})
+    var searchClasses = classNames('search-wrap', {focused: this.state.focused});
+    var hintClasses = classNames('transition', {invisible: this.state.focused})
     return (
       <div className={searchClasses}>
-      	<input type='text' className='search' onClick={this.handleFocus} onChange={this.handleChange} />
-      	<p className={hintClasses}>enter a subreddit</p>
+        <input type='text' className='search' onClick={this.handleFocus} onChange={this.handleChange} />
+        <p className={hintClasses}>enter a subreddit</p>
       </div>
     );
   }
